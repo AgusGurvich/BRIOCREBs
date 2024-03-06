@@ -3,6 +3,10 @@ import { pool } from '../db.js';
 import auth from '../lib/auth.js';
 const router = Router();
 
+router.get('/', (req, res) => {
+    res.render('login');
+});
+
 router.get("/cancion/para/mi/muerte", async (req, res) => {
     res.render('ingresoControl');
 });
