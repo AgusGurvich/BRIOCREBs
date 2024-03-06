@@ -16,12 +16,3 @@ export const pool = createPool({
     database: DB_NAME
 })
 
-CREATE TABLE precioPorAnillado (
-    id INT NOT NULL AUTO_INCREMENT,
-    numero INT,
-    hojas INT NOT NULL,
-    precio FLOAT NOT NULL,
-    PRIMARY KEY (id)
-);
-
- 
