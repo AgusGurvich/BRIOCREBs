@@ -16,22 +16,12 @@ export const pool = createPool({
     database: DB_NAME
 })
 
-pool.getConnection((err, connection) => {
-    if(err) {
-        if(err.code === 'PROTOCOL_CONNECTION_LOST') {
-            console.error('DATABASED CONNECTION WAS CLOSED');
-        }
-        if(err.code === 'ER_CON_COUNT_ERROR') {
-            console.error('DATABASE HAS TOO MANY CONNECTIONS');
-        }
-        if(err.code === 'ECONNRESFUSED') {
-            console.error('DATABASE CONNECTION WAS REFUSED');
-        }
-    }
-
-    if(connection) connection.release();
-    console.log('DB is Connected');
-    return;
-});
+CREATE TABLE precioPorAnillado (
+    id INT NOT NULL AUTO_INCREMENT,
+    numero INT,
+    hojas INT NOT NULL,
+    precio FLOAT NOT NULL,
+    PRIMARY KEY (id)
+);
 
  
